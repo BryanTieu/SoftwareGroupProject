@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2021 at 10:12 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Aug 03, 2021 at 06:37 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,9 +45,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `full_name`, `address`, `address2`, `city`, `areastate`, `zipcode`) VALUES
-(1, 'admin', 'admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '', '', '', '', '', 0),
 (2, 'adminbryan', 'tieubryan1@gmail.com', '63807f82b48db5d467d524d8cf30d685', 'Bryan Tieu', '5819 Sawmill Bend Ln', 'Apt 7162', 'Sugar Land', 'TX', 77479),
-(14, 'Sarah1234', 'sarahG@yahoo.com', '81dc9bdb52d04dc20036dbd8313ed055', ' Sarah Goodwill', '2412 Bellaire Blvd', 'Apt. 1232', 'Houston', 'TX', 77072);
+(18, 'david123', 'David123@gmail.com', '202cb962ac59075b964b07152d234b70', 'David Laid', '5819 Sawmill Bend Lane', 'Apt 123', 'Sugar Land', 'TX', 77377),
+(19, 'admin', 'Admin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', ' Admin', 'Admin Lane', 'Admin 231', 'New York', 'AL', 10019),
+(20, 'adminChloe', 'sarahG@yahoo.com', 'c51ce410c124a10e0db5e4b97fc2af39', 'Sarah G', '2412 Bellaire Blvd', 'Apt. 1232', 'Houston', 'OK', 77072);
 
 --
 -- Indexes for dumped tables
@@ -68,7 +69,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
