@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fuel Quote</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -54,15 +54,16 @@
     <?php endif ?>
     <div class="input-group">
         <label>Username</label>
-        <input type="text" name="username" >
+        <input type="text" name="username" style="text-align: left; padding: 5px 10px;" placeholder="Username">
     </div>
     <div class="input-group">
         <label>Password</label>
-        <input type="password" name="password">
+        <input type="password" name="password" style="text-align: left; padding: 5px 10px;" placeholder="Enter Password">
     </div>
     <div class="input-group">
         <button type="submit" class="btn" name="login_user">Login</button>
     </div>
+
     <p>
         Not yet a member? <a href="register.php">Sign up</a>
     </p>

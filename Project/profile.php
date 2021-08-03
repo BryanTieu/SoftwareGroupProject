@@ -35,7 +35,7 @@ if (isset($_POST["update"])) {
 
     } else {
         echo "<script>alert('Profile can not Updated.');</script>";
-        echo "Email is already taken please use another email";
+        echo "Please Check all fields";
     }
 }
 ?>
@@ -130,42 +130,42 @@ if (!isset($_SESSION['username'])) {
         <div class="input-group">
             <label>Fullname</label>
             <label>
-                <input type="text" name="full_name" style="width:20em;" required value=" <?php echo $full_name; ?>" />
+                <input type="text" name="full_name" placeholder="Enter FullName" style="width:20em; text-align: left; padding: 5px 5px" required value=" <?php echo $full_name; ?>" />
             </label>
         </div>
 
         <div class="input-group">
             <label>Email Address</label>
             <label>
-                <input type="email" name="email" style="width:20em;" required value="<?php echo $email; ?>">
+                <input type="email" name="email" style="width:20em; text-align: left; padding: 5px 5px;" placeholder="Enter Email" required value="<?php echo $email; ?>">
             </label>
         </div>
 
         <div class="input-group">
             <label>Address</label>
             <label>
-                <input type="text" name="address" style="width:20em; " required value="<?php echo $address; ?>">
+                <input type="text" name="address" style="width:20em; text-align: left; padding: 5px 5px" placeholder="Enter Address" required value="<?php echo $address; ?>">
             </label>
         </div>
 
         <div class="input-group">
             <label>Address 2/P.O Box</label>
             <label>
-                <input type="text" name="address2" style="width:20em;" placeholder="Not Required" value="<?php echo $address2; ?>">
+                <input type="text" name="address2" style="width:20em; text-align: left; padding: 5px 5px" placeholder="Not Required" value="<?php echo $address2; ?>">
             </label>
         </div>
 
         <div class="input-group">
             <label class="control-label">City</label>
             <label>
-                <input type="text" name="city" style="width:20em;" required value="<?php echo $city; ?>">
+                <input type="text" name="city" style="width:20em; text-align: left; padding: 5px 5px" placeholder="Enter City" required value="<?php echo $city; ?>">
             </label>
         </div>
 
         <div class="form-group">
             <!-- State Button -->
             <label for="areastate" class="control-label">State</label>
-            <select class="form-control" id="areastate" type="text" name="areastate" required="required">
+            <select class="form-control" id="areastate" type="text" name="areastate" required>
                 <option value="<?php echo $state="AL"; ?>">AL</option>
                 <option value="<?php echo $state="Ak"; ?>">AK</option>
                 <option value="<?php echo $state="AZ"; ?>">AZ</option>

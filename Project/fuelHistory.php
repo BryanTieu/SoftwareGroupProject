@@ -8,6 +8,7 @@ if (!isset($_SESSION["id"])) {
     $_SESSION['msg'] = "You must log in first";
     header("Location: login.php");
 }
+
 ?>
 
 
@@ -75,39 +76,31 @@ if (!isset($_SESSION["id"])) {
         <table class="table">
             <thead class="thead-light">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Gallons</th>
+                <th scope="col">ID#</th>
                 <th scope="col">Delivery Address</th>
-                <th scope="col">Delivery Date</th>
+                <th scope="col">State</th>
+                <th scope="col">Gallons</th>
                 <th scope="col">Suggested Price</th>
                 <th scope="col">Total Amount Due</th>
+                <th scope="col">Date</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>10</td>
-                <td>16218 South Temple Drive, Houston, Tx, 77077</td>
-                <td>10/25/2019</td>
-                <td>$999</td>
-                <td class="totalAmt">$999</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>20</td>
-                <td>5123 Sawdust Drive, Houston Tx, 77209</td>
-                <td>09/01/2019</td>
-                <td>$600</td>
-                <td class="totalAmt">$12000</td>
-            </tr>
-            <tr class>
-                <th scope="row">3</th>
-                <td>15</td>
-                <td>456 MLK St Atlanta, GA 30356</td>
-                <td>11/01/2019</td>
-                <td>$400</td>
-                <td class="totalAmt">$6000</td>
-            </tr>
+
+                <th scope="row">
+                    <?php
+                    $sql = "SELECT * FROM fuelquote WHERE id='{$_SESSION["id"]}'";
+                    $result = mysqli_query($db, $sql);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr><td>" . implode("</td><td>",$row) . "</td></tr>";
+                        }
+                    }
+                    ?>
+                </th>
+
             </tbody>
         </table>
     </div>
@@ -115,7 +108,7 @@ if (!isset($_SESSION["id"])) {
 
 <div class="back" action="fuelQuoteForm.php">
     <Submit Button>
-        <button type="submit" class="btn btn-primary" onclick="history.back()">Go Back</button>
+        <a href="index.php" class="btn btn-danger" style="float:left;">Home</a>
 </div>
 
 
