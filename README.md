@@ -7,4 +7,6 @@ https://project.bryantieu.com/login
 
 08/02/2021 Getting very close I have finally updated the fuelmodule and the fuelhistory files. The fuel pricing functions work and can be cleaned up a bit however the buttons testing still have a few bugs that need to be addressed such as the form data disappearing at times when the button is clicked. Now to address the disable and enabling of the buttons when the form is not filled.
 
-08/04/2021 I am pretty much completed the project and have pushed the files through server, added disablers on the fuel form and fixed the bug on the server page where the user could not access the home because of obs issues. This has been a fun and huge learning experience I will continue to update the project as I go.
+08/04/2021 I am pretty much completed the project and have pushed the files through server, added disablers on the fuel form when fuel quote form is not completely filled out and fixed the bug on the server page where the user could not access the home because of obs issues. This has been a fun and huge learning experience I will continue to update the project as I go.
+
+08/04/2021 I have added a JS file for some functions that I have as well as added a submit file for the get quote button and utilizing JQUERY and AJAX for partial form submissions on the fuel module page.
