@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -12,6 +13,13 @@ $address2 = "";
 $city = "";
 $state = "";
 $zipcode = "";
+
+// Get Quote values initialized
+$currentPrice = 1.50;
+$companyProfit = .10;
+$locationFactor = 0.04;
+$history = 0.00;
+$gallons = 0.03;
 
 
 // connect to the database
@@ -89,7 +97,8 @@ if (isset($_POST['login_user'])) {
             $_SESSION['success'] = "You are now logged in please update your profile if needed";
 
             header('location: profile.php');
-        }else {
+        }
+        else {
             array_push($errors, "Wrong username/password combination");
         }
     }
@@ -102,38 +111,5 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['id']);
     header("location: login.php");
 }
-
-// this code does not work for some reason had to do it the ugly way will fix in the future ***
-// User Profile
-//if(isset($_POST['update'])) {
-    //$id = $_SESSION['id'];
-    //$checkIdquery=mysqli_query($db,"SELECT * FROM users where id='$id' LIMIT 1")or die(mysqli_error($db));
-
-    // receive all input values from the form
-    //$full_name = mysqli_real_escape_string($db, $_POST['full_name']);
-    //$gender = mysqli_real_escape_string($db, $_POST['gender']);
-    //$age = mysqli_real_escape_string($db, $_POST['age']);
-    //$address = mysqli_real_escape_string($db, $_POST['address']);
-    //$email = mysqli_real_escape_string($db, $_POST['email']);
-
-    //$full_name = $_POST['full_name'];
-    //$gender = $_POST['gender'];
-    //$age = $_POST['age'];
-    //$address = $_POST['address'];
-    //$email = $_POST['email'];
-
-    // FOR SOME REASON THIS DOES NOT UPDATE THE VALUES IN THE TABLE I THINK
-    // IT HAS TO DO WITH THE EMPTY TABLES AND THE UPDATE FUNCTION AS IT WONT
-    // UPDATE A EMPTY TABLE. THERE IS A BUG THAT WHEN SUBMITTING TO UPDATE
-    // THE "WELCOME USERNAME" WILL DISAPPEAR ON THE INDEX.PHP PAGE.
-    //$query = "UPDATE users SET full_name='$full_name', gender='$gender', age='$age', address='$address', email='$email'
-                      //WHERE id = '$id'";
-    //mysqli_query($db, $query) or die(mysqli_error($db));
-
-    //$_SESSION['username'] = $username;
-    //$_SESSION['success'] = "You have updated your profile";
-    //header('location: index.php');
-//}
-
 
 ?>

@@ -83,7 +83,11 @@ if (isset($_POST["FuelQuote"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Title -->
     <title>Fuel Quote Form</title>
+    <!-- End Title -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -105,6 +109,8 @@ if (isset($_POST["FuelQuote"])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src = "script.js"></script>
 
@@ -142,8 +148,9 @@ if (!isset($_SESSION['username'])) {
     <h1>Fuel Quote Form</h1>
 </div>
 <div class="profile-input-field">
-    <form method="post">
+    <form name="myform" method="post">
 
+        <!-- Fetch User ID During Session -->
         <?php
         $sql = "SELECT * FROM users WHERE id='{$_SESSION["id"]}'";
         $result = mysqli_query($db, $sql);
@@ -153,10 +160,11 @@ if (!isset($_SESSION['username'])) {
             }
         }
         ?>
+        <!-- End Fetch User ID During Session -->
 
         <h3>Please Fill-out All Fields</h3>
 
-        <!-- notification message -->
+        <!-- Notification Message -->
         <?php if (isset($_SESSION['success'])) : ?>
             <div class="error success" >
                 <h3>
@@ -168,13 +176,18 @@ if (!isset($_SESSION['username'])) {
             </div>
         <?php endif ?>
 
+        <!-- Gallons Input -->
         <div class="input-group">
             <label>Gallons</label>
             <label>
-                <input type="text" id="gallons" name="gallons" placeholder="Enter Gallons" style="width:20em; text-align: left; padding: 5px 5px" required="required" />
+                <input class="gallons" type="text" id="gallons" name="gallons" placeholder="Enter Gallons" style="width:20em; text-align: left; padding: 5px 5px" autocomplete="off" onkeyup="success()" required="required" />
             </label>
         </div>
+        <! -- End Gallons Input
 
+        <!-- End Notification Message -->
+
+        <!-- User Address Input -->
         <div class="input-group">
             <label>Address</label>
             <label>
@@ -189,7 +202,10 @@ if (!isset($_SESSION['username'])) {
                 ?>" readonly>
             </label>
         </div>
+        <!-- End User Address Input -->
 
+
+        <!-- User State Input -->
         <div>
 
             <label>State</label>
@@ -205,23 +221,22 @@ if (!isset($_SESSION['username'])) {
                    }
                    ?>" readonly
             >
-
         </div>
+        <!-- End User State Input -->
+
         <br>
         <br>
-        <!-- date picker -->
+
+        <!-- Date Picker -->
         <div class="form-group">
             <label for="date-picker-example">Delivery Date</label>
-            <div class='input-group date' id='datepicker'>
-                <input type="text"
-                       placeholder="Selected date" class="form-control" name="daydate" required/>
+            <div class='input-group date'>
+                <label for="datepicker"></label><input id="datepicker" type="text" autocomplete="on" class="form-control" name="daydate" onchange="success()" value="<?php echo date('m-d-Y'); ?>" required/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
         </div>
-
-
         <script type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script>
@@ -239,33 +254,30 @@ if (!isset($_SESSION['username'])) {
                 });
             });
         </script>
-        <!-- date picker end-->
+        <!-- End Date Picker -->
+
+        <!-- Get Quote Button -->
         <div>
-
             <br>
-
             <label id="response" style="width: 200px; height: 200px; resize: none;" readonly="readonly">
+                <!-- Suggested Price Box -->
                 Suggested Price
                 <input type="text" name="sugprice" style="width:20em; text-align: left; padding: 5px 5px"  placeholder="$1.70" readonly>
+                <!-- Total Price Box -->
                 Total Price
-                <input type="text" name="sugprice" style="width:20em; text-align: left; padding: 5px 5px"  placeholder="$1700" readonly>
+                <input type="text" name="totprice" style="width:20em; text-align: left; padding: 5px 5px"  placeholder="$1700" readonly>
             </label>
             <br>
-
-            <button id="formsubmit" type="button" class="btn">Get Quote</button><br>
-
-
+            <button disabled id="formsubmit" type="button" class="btn">Get Quote</button><br>
         </div>
+        <!-- End Get Quote Button -->
 
-
-
-
-
-        <!-- Submit Button -->
+        <!-- Submit Button To Store Values into Database-->
         <div class="input-group">
-            <button type="submit" class="btn" name="FuelQuote">Submit</button>
+            <button disabled id="submit" type="submit" class="btn" name="FuelQuote" >Submit</button>
         </div>
         <!-- End Submit -->
+
 
         <!-- Go Back Button -->
     <div class="back" action="fuelQuoteForm.php">
@@ -275,9 +287,6 @@ if (!isset($_SESSION['username'])) {
         <!-- End Go Back Button -->
 
 </form>
-
 </div>
 </body>
-
-
 </html>

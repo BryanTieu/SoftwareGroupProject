@@ -130,7 +130,7 @@ if (!isset($_SESSION['username'])) {
         <div class="input-group">
             <label>Fullname</label>
             <label>
-                <input type="text" name="full_name" placeholder="Enter FullName" style="width:20em; text-align: left; padding: 5px 5px" required value=" <?php echo $full_name; ?>" />
+                <input type="text" name="full_name" placeholder="Enter Full Name" style="width:20em; text-align: left; padding: 5px 5px" required />
             </label>
         </div>
 
@@ -165,7 +165,7 @@ if (!isset($_SESSION['username'])) {
         <div class="form-group">
             <!-- State Button -->
             <label for="areastate" class="control-label">State</label>
-            <select class="form-control" id="areastate" type="text" name="areastate" required>
+            <select class="form-control" id="areastate" type="text" name="areastate" autocomplete="off" required>
                 <option value="<?php echo $state="AL"; ?>">AL</option>
                 <option value="<?php echo $state="Ak"; ?>">AK</option>
                 <option value="<?php echo $state="AZ"; ?>">AZ</option>
@@ -231,6 +231,7 @@ if (!isset($_SESSION['username'])) {
                 name="zip" placeholder="#####" required="required" /> -->
         </div>
 
+        Please Confirm Before Submitting
         <!-- Submit Button -->
         <div class="input-group">
             <button type="submit" class="btn" name="update">Update</button>

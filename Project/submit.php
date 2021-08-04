@@ -33,6 +33,7 @@ $totalprice = $suggestedprice * (int)$gallons;
 ?>
 
 <div class="input-group">
+    <!-- Suggested Price -->
     <label>Suggested Price</label>
     <br>
     <label>
@@ -40,14 +41,17 @@ $totalprice = $suggestedprice * (int)$gallons;
         echo "$".$suggestedprice;
         ?>" readonly>
     </label>
+    <!-- End -->
     <br>
+    <!-- Total Price -->
     <label>Total Price</label>
     <br>
     <label>
-        <input type="text" name="sugprice" style="width:20em; text-align: left; padding: 5px 5px" value="<?php
+        <input type="text" name="totprice" style="width:20em; text-align: left; padding: 5px 5px" value="<?php
         echo "$".$totalprice;
         ?>" readonly>
     </label>
+    <!-- End -->
 </div>
 
 

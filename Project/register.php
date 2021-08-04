@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fuel Quote</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -43,22 +43,22 @@
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	  <input type="text" name="username" style="text-align: left; padding: 5px 10px;" placeholder="Username" value="<?php echo $username; ?>">
   	</div>
   	<div class="input-group">
   	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	  <input type="email" name="email" style="text-align: left; padding: 5px 10px;" placeholder="Email" value="<?php echo $email; ?>">
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
-  	  <input type="password" name="password_1">
+  	  <input type="password" name="password_1" style="text-align: left; padding: 5px 10px;" placeholder="Password">
   	</div>
   	<div class="input-group">
   	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
+  	  <input type="password" name="password_2" style="text-align: left; padding: 5px 10px;" placeholder="Confirm Password">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	  <button type="submit" class="btn" name="reg_user" style="text-align: left; padding: 5px 10px;">Register</button>
   	</div>
   	<p>
   		Already a member? <a href="login.php">Sign in</a>
